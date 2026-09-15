@@ -1,11 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap");
 :root {
   --navy: #173f5f;
-  --green: #b94f35;
+  --green: #173f5f;
   --lime: #f0b93e;
   --gold: #f0b93e;
-  --cream: #f8f0df;
-  --paper: #fffaf1;
+  --cream: #f4ecdc;
+  --paper: #fffaf2;
   --ink: #18313a;
   --muted: #657076;
   --line: #ded4c4;
@@ -52,7 +52,7 @@ select {
 .topline {
   background: var(--navy);
   color: #fff;
-  padding: 0.45rem max(1rem, calc((100vw - 1240px) / 2));
+  padding: 0.45rem clamp(1rem, 3vw, 3.5rem);
   display: flex;
   justify-content: space-between;
   font-size: 0.77rem;
@@ -63,7 +63,7 @@ select {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 max(1rem, calc((100vw - 1240px) / 2));
+  padding: 0 clamp(1rem, 3vw, 3.5rem);
   position: sticky;
   top: 0;
   z-index: 30;
@@ -101,7 +101,7 @@ select {
   font-weight: 600;
 }
 .nav a[aria-current="page"] {
-  color: var(--green);
+  color: #9a6810;
 }
 .nav-cta {
   background: var(--gold);
@@ -121,7 +121,7 @@ select {
   margin: 5px;
 }
 .wrap {
-  width: min(1240px, calc(100% - 2rem));
+  width: min(1480px, calc(100% - clamp(2rem, 6vw, 7rem)));
   margin: auto;
 }
 .eyebrow {
@@ -129,7 +129,7 @@ select {
   letter-spacing: 0.16em;
   font-size: 0.7rem;
   font-weight: 700;
-  color: var(--green);
+  color: #9a6810;
 }
 h1,
 h2,
@@ -317,16 +317,29 @@ h3 {
   align-items: center;
 }
 .page-hero {
-  background: var(--navy);
+  position: relative;
+  min-height: 610px;
+  display: flex;
+  align-items: center;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(23, 63, 95, 1) 0%,
+      rgba(23, 63, 95, 0.98) 44%,
+      rgba(23, 63, 95, 0.72) 67%,
+      rgba(23, 63, 95, 0.16) 100%
+    ),
+    var(--page-image, url("../images/community/learners-assembly.jpeg")) right
+      center/58% 100% no-repeat;
   color: #fff;
   padding: clamp(5rem, 10vw, 9rem) 0;
 }
 .page-hero h1 {
-  max-width: 920px;
+  max-width: 840px;
   margin: 0.7rem 0;
 }
 .page-hero p {
-  max-width: 720px;
+  max-width: 650px;
   font-size: 1.1rem;
 }
 .grid-2 {
@@ -503,6 +516,13 @@ h3 {
   .hero {
     min-height: 680px;
     background-position: 58% center;
+  }
+  .page-hero {
+    min-height: 560px;
+    background:
+      linear-gradient(rgba(23, 63, 95, 0.86), rgba(23, 63, 95, 0.92)),
+      var(--page-image, url("../images/community/learners-assembly.jpeg"))
+        center/cover;
   }
   .hero-copy {
     padding: 7rem 0 4rem;
