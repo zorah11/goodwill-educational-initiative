@@ -221,6 +221,36 @@ h3 {
 .programme-list {
   border-top: 1px solid var(--line);
 }
+.impact-band {
+  background: var(--gold);
+  padding: 2.6rem 0;
+}
+.impact-grid {
+  display: grid;
+  grid-template-columns: 1.2fr repeat(3, 1fr);
+  gap: 1px;
+  align-items: stretch;
+}
+.impact-grid > * {
+  padding: 1.2rem 2rem;
+  border-left: 1px solid rgba(23, 63, 95, 0.28);
+}
+.impact-grid > :first-child {
+  border-left: 0;
+  padding-left: 0;
+}
+.impact-number {
+  display: block;
+  font: 700 clamp(2.5rem, 5vw, 5rem) / 1 var(--serif);
+  color: var(--navy);
+}
+.impact-label {
+  display: block;
+  max-width: 180px;
+  margin-top: 0.45rem;
+  font-size: 0.83rem;
+  font-weight: 700;
+}
 .programme-row {
   display: grid;
   grid-template-columns: 65px 0.7fr 1.3fr auto;
@@ -538,6 +568,14 @@ h3 {
   }
   .programme-row {
     grid-template-columns: 42px 1fr;
+  }
+  .impact-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .impact-grid > * {
+    padding: 1rem;
+    border-left: 0;
+    border-top: 1px solid rgba(23, 63, 95, 0.25);
   }
   .programme-row p,
   .programme-row .arrow {
