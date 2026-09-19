@@ -164,10 +164,52 @@ h3 {
       rgba(13, 44, 67, 0.78) 49%,
       rgba(13, 44, 67, 0.2) 82%
     ),
-    url("../images/community/learning-visit.jpeg") center 44% / cover;
+    url("../images/community/borehole-hero-enhanced.png") center 52% / cover;
   display: flex;
   align-items: end;
   color: #fff;
+}
+.ngo-actions {
+  position: relative;
+  z-index: 3;
+  margin-top: -3rem;
+}
+.ngo-action-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  box-shadow: 0 24px 60px rgba(13, 44, 67, 0.18);
+}
+.ngo-action-grid article {
+  min-height: 220px;
+  padding: 2rem;
+  color: #fff;
+  background: var(--navy);
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+}
+.ngo-action-grid article:last-child {
+  border-right: 0;
+}
+.ngo-action-grid .featured {
+  background: #176b4d;
+}
+.ngo-action-grid span,
+.ngo-action-grid a {
+  color: var(--lime);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.ngo-action-grid h3 {
+  margin: 1rem 0 0.6rem;
+}
+.ngo-action-grid p {
+  color: rgba(255, 255, 255, 0.78);
+}
+.ngo-action-grid a {
+  display: inline-block;
+  margin-top: 0.8rem;
+  text-decoration: none;
 }
 .hero-copy {
   padding: 8rem 0 6rem;
@@ -515,6 +557,14 @@ h3 {
   color: var(--green);
 }
 @media (max-width: 900px) {
+  .ngo-action-grid {
+    grid-template-columns: 1fr;
+  }
+  .ngo-action-grid article {
+    min-height: 0;
+    border-right: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  }
   .brand-logo {
     width: 52px;
     height: 52px;
@@ -556,7 +606,7 @@ h3 {
   }
   .hero {
     min-height: 680px;
-    background-position: 58% center;
+    background-position: 70% center;
   }
   .page-hero {
     min-height: 560px;
