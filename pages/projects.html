@@ -8,7 +8,8 @@
       content="Photographs and community moments from Goodwill Educational Initiative Uganda."
     />
     <title>Stories & Gallery | GEI Uganda</title>
-    <link rel="stylesheet" href="../css/styles.css?v=3" />
+    <link rel="icon" href="../images/brand/goodwill-logo.png" />
+    <link rel="stylesheet" href="../css/styles.css?v=4" />
   </head>
   <body>
     <header class="header">
@@ -46,65 +47,31 @@
         </div>
       </section>
       <section class="section">
-        <div class="wrap gallery">
-          <figure>
-            <img
-              src="../images/community/community-gathering.jpeg"
-              alt="Learners performing during a community gathering"
-            />
-            <figcaption>
-              Learners taking part in a community gathering
-            </figcaption>
-          </figure>
-          <figure>
-            <img
-              src="../images/community/learner-portrait.jpeg"
-              alt="Goodwill learner in school uniform"
-            />
-            <figcaption>A learner at Goodwill</figcaption>
-          </figure>
-          <figure>
-            <img
-              src="../images/community/school-community.jpeg"
-              alt="School community gathered outdoors"
-            />
-            <figcaption>A school-community gathering</figcaption>
-          </figure>
-          <figure>
-            <img
-              src="../images/community/cultural-practice.jpeg"
-              alt="Learners participating in cultural practice"
-            />
-            <figcaption>Cultural participation at school</figcaption>
-          </figure>
-          <figure>
-            <img
-              src="../images/community/learning-visit.jpeg"
-              alt="Learners and adults gathered before a journey"
-            />
-            <figcaption>A learning visit with pupils and staff</figcaption>
-          </figure>
-          <figure>
-            <img
-              src="../images/community/learners-assembly.jpeg"
-              alt="Learners assembled outside"
-            />
-            <figcaption>Learners gathered on the school grounds</figcaption>
-          </figure>
-          <figure>
-            <img
-              src="../images/community/classroom-group.jpeg"
-              alt="Learners standing inside a classroom"
-            />
-            <figcaption>A community classroom in Buvuma</figcaption>
-          </figure>
-          <figure>
-            <img
-              src="../images/community/early-learning.jpeg"
-              alt="Young children seated together"
-            />
-            <figcaption>Early learning in the community</figcaption>
-          </figure>
+        <div class="wrap">
+          <div class="gallery-heading">
+            <div>
+              <p class="eyebrow">75 supplied photographs</p>
+              <h2>Explore the complete collection.</h2>
+            </div>
+            <div class="gallery-filters" aria-label="Gallery filters">
+              <button class="active" type="button" data-gallery-filter="all">
+                All photos
+              </button>
+              <button type="button" data-gallery-filter="featured">
+                Highlights
+              </button>
+            </div>
+          </div>
+          <div
+            class="gallery interactive-gallery"
+            id="community-gallery"
+            data-gallery-count="75"
+          ></div>
+          <div class="gallery-more-wrap">
+            <button class="btn gallery-more" type="button">
+              Show more photos
+            </button>
+          </div>
         </div>
       </section>
       <section class="section feature">
@@ -166,6 +133,6 @@
         <a href="contact.html">Contact us</a>
       </div>
     </footer>
-    <script src="../js/main.js"></script>
+    <script src="../js/main.js?v=2"></script>
   </body>
 </html>

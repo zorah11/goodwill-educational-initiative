@@ -407,8 +407,8 @@ h3 {
       rgba(23, 63, 95, 0.72) 67%,
       rgba(23, 63, 95, 0.16) 100%
     ),
-    var(--page-image, url("../images/community/learners-assembly.jpeg")) right
-      center/58% 100% no-repeat;
+    var(--page-image, url("../images/community/learners-assembly.jpeg")) center
+      center/cover no-repeat;
   color: #fff;
   padding: clamp(5rem, 10vw, 9rem) 0;
 }
@@ -451,8 +451,12 @@ h3 {
   gap: 6vw;
 }
 .portrait {
-  max-height: 600px;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  max-height: 620px;
   object-fit: cover;
+  object-position: center top;
+  filter: saturate(1.04) contrast(1.05) brightness(1.04);
 }
 .notice {
   padding: 1.2rem;
@@ -480,9 +484,39 @@ h3 {
   columns: 3 260px;
   column-gap: 1rem;
 }
+.gallery-heading {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  align-items: end;
+  margin-bottom: 2rem;
+}
+.gallery-heading h2 {
+  margin-bottom: 0;
+}
+.gallery-filters {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+.gallery-filters button {
+  border: 1px solid var(--line);
+  background: transparent;
+  color: var(--ink);
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+  font: 700 0.75rem var(--sans);
+}
+.gallery-filters button.active {
+  color: #fff;
+  border-color: var(--green);
+  background: var(--green);
+}
 .gallery figure {
   break-inside: avoid;
   margin: 0 0 1rem;
+  cursor: zoom-in;
+  background: var(--cream);
 }
 .gallery img {
   max-height: 520px;
@@ -499,6 +533,45 @@ h3 {
   padding: 0.5rem 0;
   font-size: 0.78rem;
   color: var(--muted);
+}
+.gallery figure[hidden] {
+  display: none;
+}
+.gallery-more-wrap {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+.gallery-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: none;
+  place-items: center;
+  padding: clamp(1rem, 4vw, 4rem);
+  background: rgba(5, 20, 15, 0.94);
+}
+.gallery-lightbox.open {
+  display: grid;
+}
+.gallery-lightbox img {
+  width: auto;
+  max-width: min(1100px, 92vw);
+  height: auto;
+  max-height: 82vh;
+  object-fit: contain;
+}
+.gallery-lightbox button {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 48px;
+  height: 48px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  background: rgba(0, 0, 0, 0.3);
+  color: #fff;
+  font-size: 1.4rem;
+  cursor: pointer;
 }
 .contact-grid {
   display: grid;
@@ -557,6 +630,12 @@ h3 {
   color: var(--green);
 }
 @media (max-width: 900px) {
+  .gallery-heading {
+    display: block;
+  }
+  .gallery-filters {
+    margin-top: 1.5rem;
+  }
   .ngo-action-grid {
     grid-template-columns: 1fr;
   }
